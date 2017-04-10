@@ -1,0 +1,12 @@
+<!-- 部分テンプレートの利点
+プログラムの可読性があがる
+他のビューからも共通部分を使い回しできる
+ -->
+<div class="contents row">
+  <% @tweet.each do |tweet| %>
+    <!-- 部分テンプレート「tweet」を呼び出す -->
+    <!-- テンプレート中の変数tweetに、eachメソッドの格納先インスタンスの値をあてる -->
+    <%= render partial: "tweet", locals: { tweet: tweet} %>
+  <% end %>
+  <%= paginate(@tweet) %>
+</div>

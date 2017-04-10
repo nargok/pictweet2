@@ -1,0 +1,17 @@
+<!-- 最初の'/tweets'の部分はaction属性を示しています。これは、フォームに入力された情報がどこに送信されるのかを表しています。method:の部分は入力された情報をどのHTTPメソッドで送信するのかを指定しています。つまり、これは/tweetsにpostメソッドでフォームに入力された情報を送信することを示しています。
+ -->
+<div class="contents row">
+  <div class="continer">
+    <!-- form_tag('url', method: :HTTPメソッド)と続けて書くように、間を空けてはいけない -->
+    <%= form_tag('/tweets', method: :post) do %>
+      <h3>
+        投稿する
+      </h3>
+      <!-- userテーブルからログイン中ユーザのnick nameを取って表示するようにしたのでname label削除 -->
+      <!-- <input placeholder="Nickname" type="text" name="name"> -->
+      <input placeholder="Image Url" type="text" name="image">
+      <textarea cols="30" name="text" placeholder="text" row="10"></textarea>
+      <input type="submit" value="SENT">
+    <% end %>
+  </div>
+</div>
